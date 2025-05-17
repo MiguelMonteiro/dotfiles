@@ -1,0 +1,14 @@
+general.import = ["~/.config/alacritty/themes/themes/gruvbox_material_medium_light.toml"]
+
+[font]
+size = 15
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[window.padding]
+x = 4
+y = 0
+
+[env]
+TERM = "xterm-256color"

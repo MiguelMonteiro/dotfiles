@@ -112,6 +112,7 @@ map("n", "<leader>Q", "<cmd>q<cr>", { desc = "quit" })
 
 -- buffer keymaps
 map("n", "<leader>bn", "<cmd>enew<cr>", { desc = "new buffer" })
+map("n", "<leader>be", "<cmd>e<cr>", { desc = "reload/refresh" })
 map("n", "<leader>bw", "<cmd>w<cr><esc>", { desc = "write buffer" })
 map("n", "<leader>bd", "<cmd>bd<cr>", { desc = "close buffer" })
 

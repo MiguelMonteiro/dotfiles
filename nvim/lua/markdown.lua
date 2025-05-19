@@ -20,9 +20,9 @@ keymap("n", "<leader>vm", function()
   require("render-markdown").toggle()
 end, { desc = "toggle markdown" })
 
--- keymap("n", "<leader>ve", function()
---   require("nabla").popup()
--- end, { desc = "toggle equation" })
+keymap("n", "<leader>ve", function()
+  require("nabla").popup()
+end, { desc = "toggle equation" })
 
 keymap("n", "<leader>va", function()
   require("nabla").toggle_virt()

@@ -134,7 +134,7 @@ miniclue.setup({
   clues = {
     { mode = "n", keys = "<Leader>b", desc = " buffer" },
     { mode = "n", keys = "<Leader>s", desc = " search" },
-    { mode = "n", keys = "<Leader>g", desc = "󰊢 git" },
+    { mode = "n", keys = "<Leader>t", desc = " terminal" },
     { mode = "n", keys = "<Leader>l", desc = "󰘦 lsp" },
     { mode = "n", keys = "<Leader>v", desc = "󰍹 view" },
     -- { mode = "n", keys = "<Leader>u", desc = "󰔃 ui" },
@@ -173,11 +173,11 @@ map("n", "<leader>sq", '<cmd>Pick list scope="quickfix"<cr>', { desc = "quickfix
 map("n", "<leader>sl", '<cmd>Pick list scope="location"<cr>', { desc = "location list" })
 map("n", "<leader>sj", '<cmd>Pick list scope="jump"<cr>', { desc = "jump list" })
 
--- git keymaps
-map("", "<leader>gh", function()
-  require("mini.git").show_range_history()
-end, { desc = "range history" })
-map("n", "<leader>gb", function()
-  require("mini.git").show_at_cursor()
-end, { desc = "git blame at cursor" })
-map("n", "<leader>gl", "<cmd>:terminal lazygit<cr>", { desc = "lazy" })
+-- terminal keymaps
+map("n", "<leader>tg", "<cmd>:terminal lazygit<cr>", { desc = "󰊢 lazygit" })
+map(
+  "n",
+  "<leader>tp",
+  "<cmd>:terminal ipython --TerminalInteractiveShell.editing_mode=vi<cr>",
+  { desc = " ipython" }
+)

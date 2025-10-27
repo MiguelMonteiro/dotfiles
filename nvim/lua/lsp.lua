@@ -12,11 +12,36 @@ vim.lsp.config("luals", {
   },
 })
 
+-- vim.lsp.config("pyright", {
+--   settings = {
+--
+--     pyright = {
+--       -- Using Ruff's import organizer
+--       disableOrganizeImports = true,
+--     },
+--     python = { analysis = { diagnosticMode = "workspace" } },
+--   },
+-- })
 vim.lsp.config("pyright", {
+  on_attach = on_attach,
+  root_markers = {
+    "pyproject.toml",
+    "setup.py",
+    "setup.cfg",
+    "requirements.txt",
+    "Pipfile",
+    "pyrightconfig.json",
+    ".git",
+  },
   settings = {
-    pyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = true,
+    pyright = { autoImportCompletion = true, disableOrganizeImports = true },
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "openFilesOnly",
+        useLibraryCodeForTypes = true,
+        typeCheckingMode = "off",
+      },
     },
   },
 })
@@ -24,16 +49,7 @@ vim.lsp.config("pyright", {
 vim.lsp.enable("luals")
 vim.lsp.enable("pyright")
 vim.lsp.enable("ruff")
-vim.lsp.enable("rust_analyzer")
--- local lspconfig = require("lspconfig")
--- lspconfig.pyright.setup({
---   settings = {
---     pyright = {
---       -- Using Ruff's import organizer
---       disableOrganizeImports = true,
---     },
---   },
--- })
+-- vim.lsp.enable("rust_analyzer")
 
 require("conform").setup({
   formatters_by_ft = {
@@ -125,7 +141,13 @@ vim.keymap.set("n", "<leader>lk", vim.lsp.buf.hover, { desc = "hover" })
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "rename" })
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "action" })
 vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { desc = "definitions" })
-vim.keymap.set("n", "<leader>lR", vim.lsp.buf.references, { desc = "references" })
+vim.keymap.set("n", "<leader>lD", function()
+  require("mini.extra").pickers.diagnostic({ scope = "current" })
+end, { desc = "diagnostics" })
+-- vim.keymap.set("n", "<leader>lR", vim.lsp.buf.references, { desc = "references" })
+vim.keymap.set("n", "<leader>lR", function()
+  require("mini.extra").pickers.lsp({ scope = "references" })
+end, { desc = "references" })
 vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, { desc = "implementations" })
 vim.keymap.set("n", "<leader>lt", vim.lsp.buf.type_definition, { desc = "type definitions" })
 vim.keymap.set("n", "<leader>lh", function()

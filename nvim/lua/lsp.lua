@@ -49,6 +49,8 @@ vim.lsp.config("pyright", {
 vim.lsp.enable("luals")
 vim.lsp.enable("pyright")
 vim.lsp.enable("ruff")
+vim.lsp.enable("harper_ls") -- grammar and spellcheking
+
 -- vim.lsp.enable("rust_analyzer")
 
 require("conform").setup({
@@ -115,26 +117,6 @@ local function hover_or_diagnostic()
   end
 end
 
--- vim.api.nvim_create_autocmd("LspAttach", {
---   desc = "LSP actions",
---   callback = function(event)
---     vim.keymap.set("n", "K", hover_or_diagnostic, { buffer = event.buf, desc = "Hover" })
---     vim.keymap.set("n", "<leader>ll", "<cmd>LspInfo<cr>", { buffer = event.buf, desc = "lsp info" })
---     vim.keymap.set("n", "<leader>lk", vim.lsp.buf.hover, { buffer = event.buf, desc = "hover" })
---     vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { buffer = event.buf, desc = "rename" })
---     vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { buffer = event.buf, desc = "action" })
---     vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { buffer = event.buf, desc = "definitions" })
---     vim.keymap.set("n", "<leader>lR", vim.lsp.buf.references, { buffer = event.buf, desc = "references" })
---     vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, { buffer = event.buf, desc = "implementations" })
---     vim.keymap.set("n", "<leader>lt", vim.lsp.buf.type_definition, { buffer = event.buf, desc = "type definitions" })
---     vim.keymap.set("n", "<leader>lh", function()
---       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
---     end, { desc = "[h]ints (toggle inlay)" })
---     vim.keymap.set("n", "<leader>lc", "<cmd>ConformInfo<cr>", { buffer = event.buf, desc = "conform (formatter) info" })
---     vim.keymap.set("n", "<leader>lf", "<cmd>format<cr>", { buffer = event.buf, desc = "format" })
---   end,
--- })
-
 vim.keymap.set("n", "K", hover_or_diagnostic, { desc = "Hover" })
 vim.keymap.set("n", "<leader>ll", "<cmd>LspInfo<cr>", { desc = "lsp info" })
 vim.keymap.set("n", "<leader>lk", vim.lsp.buf.hover, { desc = "hover" })
@@ -157,11 +139,3 @@ vim.keymap.set("n", "<leader>lc", "<cmd>ConformInfo<cr>", { desc = "conform (for
 vim.keymap.set("n", "<leader>lf", function()
   require("conform").format()
 end, { desc = "format" })
--- is this necessary?
--- if vim.tbl_isempty(vim.lsp.buf_get_clients()) then
--- 	map("n", "gd", function()
--- 		vim.lsp.buf.definition()
--- 	end, { desc = "definition" })
--- else
--- 	map("n", "gd", "gd", { desc = "definition" })
--- end

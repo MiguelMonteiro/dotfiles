@@ -7,6 +7,7 @@ mkdir -p ~/.config/alacritty
 ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/nvim ~/.config/nvim
+ln -sf ~/dotfiles/Brewfile ~/Brewfile
 
 # source shell syntax higlighting and auto-complete
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

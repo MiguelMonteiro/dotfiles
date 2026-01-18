@@ -12,6 +12,18 @@ vim.lsp.config("luals", {
   },
 })
 
+
+vim.lsp.config('ty', {
+  settings = {
+    ty = {
+      configuration = {
+        rules = {
+          ["unresolved-reference"] = "warn"
+        }
+      }
+    },
+  },
+})
 -- vim.lsp.config("pyright", {
 --   settings = {
 --
@@ -47,8 +59,9 @@ vim.lsp.config("pyright", {
 })
 
 vim.lsp.enable("luals")
-vim.lsp.enable("pyright")
+-- vim.lsp.enable("pyright")
 vim.lsp.enable("ruff")
+vim.lsp.enable("ty")
 vim.lsp.enable("harper_ls") -- grammar and spellcheking
 
 -- vim.lsp.enable("rust_analyzer")

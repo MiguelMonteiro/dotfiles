@@ -1,45 +1,39 @@
-brew "aws-vault"
-brew "awscli"
-brew "coreutils"
+# Grammar Checker for Developers
 brew "harper"
+# Improved top (interactive process viewer)
 brew "htop"
-brew "k9s"
-brew "kube-linter"
-brew "kubernetes-cli"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
-brew "pyright"
-brew "ruff"
-brew "stylua"
+# Terminal multiplexer
 brew "tmux"
+# Incremental parsing library
+brew "tree-sitter"
+# Parser generator tool
+brew "tree-sitter-cli"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Internet file retriever
 brew "wget"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Feature-rich syntax highlighting for Zsh
+brew "zsh-fast-syntax-highlighting"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# GPU-accelerated terminal emulator
 cask "alacritty"
+# App to build and share containerised applications and microservices
 cask "docker-desktop"
+# Web browser
+cask "firefox"
 cask "font-hack-nerd-font"
-cask "itk-snap"
-cask "visual-studio-code"
-vscode "charliermarsh.ruff"
-vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
-vscode "ms-python.debugpy"
-vscode "ms-python.mypy-type-checker"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-python.vscode-python-envs"
-vscode "ms-toolsai.jupyter"
-vscode "ms-toolsai.jupyter-keymap"
-vscode "ms-toolsai.jupyter-renderers"
-vscode "ms-toolsai.vscode-jupyter-cell-tags"
-vscode "ms-toolsai.vscode-jupyter-slideshow"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode.remote-explorer"
-vscode "mutantdino.resourcemonitor"
-vscode "njpwerner.autodocstring"
-vscode "redhat.vscode-yaml"
-vscode "streetsidesoftware.code-spell-checker"
-vscode "tamasfe.even-better-toml"
-vscode "vscodevim.vim"
-vscode "yinfei.luahelper"
+# Keyboard customiser
+cask "karabiner-elements"

@@ -1,7 +1,7 @@
 general.import = ["~/.config/alacritty/themes/themes/gruvbox_material_medium_light.toml"]
 
 [font]
-size = 15
+size = 18
 
 [font.normal]
 family = "Hack Nerd Font Mono"

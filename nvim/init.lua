@@ -33,10 +33,15 @@ require("lazy").setup({
   { "neovim/nvim-lspconfig" },
   { "stevearc/conform.nvim" }, -- formatting
   { "saghen/blink.cmp", version = "1.*" }, --autocompletion
-  { "rafamadriz/friendly-snippets" },
+  { "rafamadriz/friendly-snippets" }, -- library of snippets
   -- markdown
   { "jbyuki/nabla.nvim" }, -- ascii math render
   { "MeanderingProgrammer/render-markdown.nvim" }, -- markdown render
+  -- snippets
+  {
+    "danymat/neogen",
+    config = true,
+  },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },

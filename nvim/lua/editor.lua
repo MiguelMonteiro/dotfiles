@@ -48,7 +48,27 @@ require("mini.surround").setup()
 require("mini.extra").setup()
 -- require("mini.diff").setup()
 -- require("mini.jump").setup()
-require("mini.snippets").setup()
+local gen_loader = require("mini.snippets").gen_loader
+require("mini.snippets").setup({
+  mappings = {
+    -- Expand snippet at cursor position. Created globally in Insert mode.
+    expand = "<Leader>sj",
+
+    -- Interact with default `expand.insert` session.
+    -- Created for the duration of active session(s)
+    jump_next = "<Leader>sl",
+    jump_prev = "<Leader>sh",
+    stop = "<Leader>sc",
+  },
+  snippets = {
+    -- Load custom file with global snippets first (adjust for Windows)
+    -- gen_loader.from_file('~/.config/nvim/snippets/global.json'),
+
+    -- Load snippets based on current language by reading files from
+    -- "snippets/" subdirectories from 'runtimepath' directories.
+    gen_loader.from_lang(),
+  },
+})
 require("mini.comment").setup()
 require("mini.pairs").setup()
 require("mini.bufremove").setup()

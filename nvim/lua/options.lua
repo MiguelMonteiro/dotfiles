@@ -108,7 +108,6 @@ map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
 -- global editor
-map("n", "<leader>Q", "<cmd>q<cr>", { desc = "quit" })
 
 -- buffer keymaps
 map("n", "<leader>bn", "<cmd>enew<cr>", { desc = "new buffer" })
@@ -121,14 +120,14 @@ map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "clockwise" })
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "anti clockwise" })
 
 -- quit
--- map("n", "<leader>q", "<cmd>qa<cr>", { desc = "[q]uit all" })
+map("n", "<leader>q", "<cmd>qa<cr>", { desc = "[q]uit all" })
 
 -- windows
 -- map("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 -- map("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 
 -- toggle word wrap
-map("n", "<leader>vw", "<cmd>set wrap!<cr>", { desc = "word wrap" })
+map("n", "<leader>vw", "<cmd>set wrap!<cr>", { desc = "toggle word wrap" })
 
 -- diagnostics
 -- map("n", "<leader>dd", vim.diagnostic.setloclist, { desc = "[d]iagnostics (buffer)" })

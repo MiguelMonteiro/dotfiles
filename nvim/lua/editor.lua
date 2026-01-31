@@ -17,7 +17,6 @@ require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "bash",
     "json",
-    "latex",
     "lua",
     "markdown",
     "markdown_inline",

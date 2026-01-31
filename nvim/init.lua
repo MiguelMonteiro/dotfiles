@@ -25,11 +25,10 @@ require("lazy").setup({
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, -- colour scheme
   { "christoomey/vim-tmux-navigator" }, --tmux navigation
   -- editor
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter", branch="master", lazy=false, build = ":TSUpdate" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "echasnovski/mini.nvim" },
   -- lsp
-  { "williamboman/mason.nvim", build = ":MasonUpdate" },
   { "neovim/nvim-lspconfig" },
   { "stevearc/conform.nvim" }, -- formatting
   { "saghen/blink.cmp", version = "1.*" }, --autocompletion

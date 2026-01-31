@@ -51,13 +51,13 @@ local gen_loader = require("mini.snippets").gen_loader
 require("mini.snippets").setup({
   mappings = {
     -- Expand snippet at cursor position. Created globally in Insert mode.
-    expand = "<Leader>sj",
+    expand = "<Leader>jj",
 
     -- Interact with default `expand.insert` session.
     -- Created for the duration of active session(s)
-    jump_next = "<Leader>sl",
-    jump_prev = "<Leader>sh",
-    stop = "<Leader>sc",
+    jump_next = "<Leader>jl",
+    jump_prev = "<Leader>jh",
+    stop = "<Leader>jc",
   },
   snippets = {
     -- Load custom file with global snippets first (adjust for Windows)
@@ -149,13 +149,14 @@ miniclue.setup({
     { mode = "n", keys = "z" },
     { mode = "x", keys = "z" },
   },
-
+  -- find icons here https://www.nerdfonts.com/cheat-sheet
   clues = {
     { mode = "n", keys = "<Leader>b", desc = " buffer" },
     { mode = "n", keys = "<Leader>s", desc = " search" },
     { mode = "n", keys = "<Leader>t", desc = " terminal" },
     { mode = "n", keys = "<Leader>l", desc = "󰘦 lsp" },
     { mode = "n", keys = "<Leader>v", desc = "󰍹 view" },
+    { mode = "n", keys = "<Leader>j", desc = " snippets" },
     -- { mode = "n", keys = "<Leader>u", desc = "󰔃 ui" },
     miniclue.gen_clues.builtin_completion(),
     miniclue.gen_clues.g(),

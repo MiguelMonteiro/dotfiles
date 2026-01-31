@@ -1,3 +1,17 @@
+local function toggle_lsp(client_name)
+    -- Check if the client is currently active
+    local active_clients = vim.lsp.get_clients({ name = client_name })
+    if #active_clients > 0 then
+        -- If active, disable it
+        vim.lsp.enable(client_name, false)
+        print(client_name .. " disabled")
+    else
+        -- If inactive, enable it
+        vim.lsp.enable(client_name, true)
+        print(client_name .. " enabled")
+    end
+end
+
 --lsp
 vim.lsp.config("luals", {
   cmd = { "lua-language-server" },
@@ -62,7 +76,9 @@ vim.lsp.enable("luals")
 -- vim.lsp.enable("pyright")
 vim.lsp.enable("ruff")
 vim.lsp.enable("ty")
-vim.lsp.enable("harper_ls") -- grammar and spellcheking
+
+vim.lsp.enable("harper_ls") -- grammar and spellchecking
+vim.keymap.set("n", "<leader>lh", function() toggle_lsp("lua_ls") end, { desc = "Toggle Harper LSP" })
 
 -- vim.lsp.enable("rust_analyzer")
 

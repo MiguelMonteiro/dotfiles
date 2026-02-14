@@ -77,8 +77,9 @@ vim.lsp.enable("luals")
 vim.lsp.enable("ruff")
 vim.lsp.enable("ty")
 
-vim.lsp.enable("harper_ls") -- grammar and spellchecking
-vim.keymap.set("n", "<leader>ls", function() toggle_lsp("harper_ls") end, { desc = "toggle harper lsp" })
+ -- grammar and spellchecking
+-- vim.lsp.enable("harper_ls")
+vim.keymap.set("n", "<leader>lH", function() toggle_lsp("harper_ls") end, { desc = "toggle Harper lsp" })
 
 -- vim.lsp.enable("rust_analyzer")
 

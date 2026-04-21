@@ -1,15 +1,15 @@
 local function toggle_lsp(client_name)
-    -- Check if the client is currently active
-    local active_clients = vim.lsp.get_clients({ name = client_name })
-    if #active_clients > 0 then
-        -- If active, disable it
-        vim.lsp.enable(client_name, false)
-        print(client_name .. " disabled")
-    else
-        -- If inactive, enable it
-        vim.lsp.enable(client_name, true)
-        print(client_name .. " enabled")
-    end
+  -- Check if the client is currently active
+  local active_clients = vim.lsp.get_clients({ name = client_name })
+  if #active_clients > 0 then
+    -- If active, disable it
+    vim.lsp.enable(client_name, false)
+    print(client_name .. " disabled")
+  else
+    -- If inactive, enable it
+    vim.lsp.enable(client_name, true)
+    print(client_name .. " enabled")
+  end
 end
 
 --lsp
@@ -26,15 +26,14 @@ vim.lsp.config("luals", {
   },
 })
 
-
-vim.lsp.config('ty', {
+vim.lsp.config("ty", {
   settings = {
     ty = {
       configuration = {
         rules = {
-          ["unresolved-reference"] = "warn"
-        }
-      }
+          ["unresolved-reference"] = "warn",
+        },
+      },
     },
   },
 })
@@ -72,14 +71,26 @@ vim.lsp.config("pyright", {
   },
 })
 
+-- harper ls for grammar and spellchecking
+vim.lsp.config["harper_ls"] = {
+  cmd = { "harper-ls", "--stdio" },
+  filetypes = { "markdown", "text", "tex", "typst" },
+  settings = {
+    ["harper-ls"] = {
+      dialect = "British",
+    },
+  },
+}
+
+-- enable
 vim.lsp.enable("luals")
 -- vim.lsp.enable("pyright")
 vim.lsp.enable("ruff")
 vim.lsp.enable("ty")
 
- -- grammar and spellchecking
--- vim.lsp.enable("harper_ls")
-vim.keymap.set("n", "<leader>lH", function() toggle_lsp("harper_ls") end, { desc = "toggle Harper lsp" })
+vim.keymap.set("n", "<leader>lH", function()
+  toggle_lsp("harper_ls")
+end, { desc = "toggle Harper lsp" })
 
 -- vim.lsp.enable("rust_analyzer")
 

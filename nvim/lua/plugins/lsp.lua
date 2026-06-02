@@ -64,7 +64,7 @@ return {
     -- harper ls for grammar and spellchecking
     vim.lsp.config["harper_ls"] = {
       cmd = { "harper-ls", "--stdio" },
-      filetypes = { "markdown", "text", "tex", "typst", "python", "yaml", "yml" },
+      filetypes = { "markdown", "text", "tex", "typst", "python"},
       settings = {
         ["harper-ls"] = {
           dialect = "British",
